@@ -1,0 +1,28 @@
+# Node dependencies
+node_modules/
+**/node_modules/
+package-lock.json
+
+# Build and distribution files
+dist/
+build/
+out/
+.svelte-kit/
+.next/
+
+# IDE / Editor folders
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+.gemini/
+
+# Environment configs
+.env
+.env.*
+.local
+*.local

@@ -1,0 +1,219 @@
+{
+  "users": [
+    {
+      "id": "u-admin-1",
+      "name": "Sarah Jenkins",
+      "email": "sarah.admin@connect.com",
+      "role": "admin",
+      "status": "active",
+      "phone": "+1 (555) 019-2834",
+      "joined": "2025-01-15"
+    },
+    {
+      "id": "u-vendor-1",
+      "name": "Apex Creative Services",
+      "email": "contact@apexcreative.co",
+      "role": "vendor",
+      "status": "active",
+      "phone": "+1 (555) 043-9821",
+      "joined": "2025-03-20"
+    },
+    {
+      "id": "u-vendor-2",
+      "name": "Nova Tech Solutions",
+      "email": "info@novatech.io",
+      "role": "vendor",
+      "status": "active",
+      "phone": "+1 (555) 076-4312",
+      "joined": "2025-04-10"
+    },
+    {
+      "id": "u-employer-1",
+      "name": "Innovate Tech Corp",
+      "email": "recruiting@innovatetech.com",
+      "role": "employer",
+      "status": "active",
+      "phone": "+1 (555) 022-8754",
+      "joined": "2025-02-05"
+    },
+    {
+      "id": "u-seeker-1",
+      "name": "Alex Mercer",
+      "email": "alex.mercer@gmail.com",
+      "role": "user",
+      "status": "active",
+      "phone": "+1 (555) 088-3498",
+      "joined": "2025-05-12",
+      "profile": {
+        "title": "Senior Frontend Developer",
+        "skills": [
+          "React.js",
+          "Tailwind CSS",
+          "JavaScript",
+          "Node.js",
+          "TypeScript"
+        ],
+        "experience": "5 Years",
+        "bio": "Passionate frontend developer specializing in responsive layouts and engaging UI animations."
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-1",
+      "title": "Senior React Engineer",
+      "company": "Innovate Tech Corp",
+      "employerId": "u-employer-1",
+      "location": "Remote / New York",
+      "salary": "$120,000 - $140,000",
+      "type": "Full-time",
+      "description": "We are seeking a seasoned frontend developer with deep expertise in React and modern state management. You will build user-facing panels and optimize application performance.",
+      "status": "active",
+      "postedAt": "2026-05-25"
+    },
+    {
+      "id": "job-2",
+      "title": "Product Designer (UI/UX)",
+      "company": "Innovate Tech Corp",
+      "employerId": "u-employer-1",
+      "location": "Hybrid (San Francisco)",
+      "salary": "$100,000 - $115,000",
+      "type": "Full-time",
+      "description": "Join our product team to design beautiful web interfaces, create prototypes, and establish our component design system.",
+      "status": "active",
+      "postedAt": "2026-05-28"
+    },
+    {
+      "id": "job-3",
+      "title": "Backend Node Developer",
+      "company": "Nova Tech Solutions",
+      "employerId": "u-vendor-2",
+      "location": "Remote (USA)",
+      "salary": "$110,000 - $130,000",
+      "type": "Contract",
+      "description": "Looking for a backend developer proficient in Node.js, Express, and database modeling with SQLite and PostgreSQL.",
+      "status": "active",
+      "postedAt": "2026-06-01"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-1",
+      "jobId": "job-1",
+      "jobTitle": "Senior React Engineer",
+      "company": "Innovate Tech Corp",
+      "applicantId": "u-seeker-1",
+      "applicantName": "Alex Mercer",
+      "applicantEmail": "alex.mercer@gmail.com",
+      "status": "Shortlisted",
+      "appliedDate": "2026-05-26",
+      "interview": {
+        "date": "2026-06-05",
+        "time": "14:00",
+        "type": "Video Call"
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-1",
+      "title": "Premium UI Redesign Package",
+      "vendorId": "u-vendor-1",
+      "vendorName": "Apex Creative Services",
+      "price": 1200,
+      "category": "Design",
+      "description": "Full redesign of your web portal including typography, dark/light styling, and Tailwind custom CSS files.",
+      "rating": 4.9,
+      "reviewsCount": 24,
+      "status": "active"
+    },
+    {
+      "id": "srv-2",
+      "title": "API Backend Integration Audit",
+      "vendorId": "u-vendor-2",
+      "vendorName": "Nova Tech Solutions",
+      "price": 850,
+      "category": "Development",
+      "description": "Security audit, performance tracing, and refactoring recommendations for Express and REST APIs.",
+      "rating": 4.7,
+      "reviewsCount": 18,
+      "status": "active"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bk-1",
+      "serviceId": "srv-1",
+      "serviceTitle": "Premium UI Redesign Package",
+      "vendorId": "u-vendor-1",
+      "vendorName": "Apex Creative Services",
+      "customerId": "u-seeker-1",
+      "customerName": "Alex Mercer",
+      "date": "2026-06-12",
+      "price": 1200,
+      "status": "Confirmed"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "title": "Connect HR Toolkit",
+      "price": 49,
+      "category": "Software",
+      "description": "A set of templates, policy handbooks, and interview rubrics for scaling startup teams.",
+      "sales": 142,
+      "status": "active"
+    },
+    {
+      "id": "prod-2",
+      "title": "Figma Dashboard Design Kit",
+      "price": 29,
+      "category": "Assets",
+      "description": "Premium grid system and Tailwind CSS matched components in a ready-to-use Figma archive.",
+      "sales": 328,
+      "status": "active"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1",
+      "productId": "prod-1",
+      "productTitle": "Connect HR Toolkit",
+      "customerId": "u-seeker-1",
+      "customerName": "Alex Mercer",
+      "date": "2026-05-30",
+      "price": 49,
+      "status": "Completed"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "vendorId": "u-vendor-1",
+      "reviewerName": "Alice Vance",
+      "rating": 5,
+      "comment": "Outstanding layout design! The Tailwind utility mappings are very clean and easy to integrate.",
+      "date": "2026-05-20"
+    },
+    {
+      "id": "rev-2",
+      "vendorId": "u-vendor-1",
+      "reviewerName": "David K.",
+      "rating": 4,
+      "comment": "Very communicative designer, delivering excellent high-fidelity Figma components.",
+      "date": "2026-05-24"
+    }
+  ],
+  "cms": {
+    "landingHeroTitle": "Connect Your Business, Career, & Services in One Unified Space",
+    "landingHeroSub": "The ultimate collaborative platform empowering talent to find jobs, vendors to sell services, and administrators to orchestrate commerce smoothly.",
+    "featuredNotice": "Join over 10,000+ businesses who leverage Connect App for daily operations.",
+    "serviceCategories": [
+      "Design",
+      "Development",
+      "Marketing",
+      "Consulting",
+      "Digital"
+    ]
+  }
+}
