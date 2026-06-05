@@ -314,8 +314,8 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
       {activeTab === 'overview' && (
         <div className="space-y-6 text-sm">
           {/* Quick Metrics */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="glass-panel p-5 rounded-2xl flex items-center justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger-container">
+            <div className="glass-panel hover-animate p-5 rounded-2xl flex items-center justify-between">
               <div>
                 <span className="text-slate-500 text-xs font-semibold">Submitted Applications</span>
                 <h4 className="text-2xl font-bold mt-1 text-slate-100">{userApps.length}</h4>
@@ -324,7 +324,7 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
                 <FileText size={20} />
               </div>
             </div>
-            <div className="glass-panel p-5 rounded-2xl flex items-center justify-between">
+            <div className="glass-panel hover-animate p-5 rounded-2xl flex items-center justify-between">
               <div>
                 <span className="text-slate-500 text-xs font-semibold">Service Bookings</span>
                 <h4 className="text-2xl font-bold mt-1 text-slate-100">{userBookings.length}</h4>
@@ -333,7 +333,7 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
                 <Clock size={20} />
               </div>
             </div>
-            <div className="glass-panel p-5 rounded-2xl flex items-center justify-between">
+            <div className="glass-panel hover-animate p-5 rounded-2xl flex items-center justify-between">
               <div>
                 <span className="text-slate-500 text-xs font-semibold">Toolkit Purchases</span>
                 <h4 className="text-2xl font-bold mt-1 text-slate-100">{userOrders.length}</h4>
@@ -342,7 +342,7 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
                 <ShoppingBag size={20} />
               </div>
             </div>
-            <div className="glass-panel p-5 rounded-2xl flex items-center justify-between">
+            <div className="glass-panel hover-animate p-5 rounded-2xl flex items-center justify-between">
               <div>
                 <span className="text-slate-500 text-xs font-semibold">Saved Opportunities</span>
                 <h4 className="text-2xl font-bold mt-1 text-slate-100">{savedJobs.length}</h4>
@@ -418,13 +418,13 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
 
             {/* Sub-tab 1: Jobs */}
             {careerSubTab === 'jobs' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger-container">
                 {filteredJobs.map(job => {
                   const isSaved = savedJobs.includes(job.id);
                   const hasApplied = userApps.some(a => a.jobId === job.id);
 
                   return (
-                    <div key={job.id} className="border border-slate-800/80 bg-slate-950/20 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-700/60 transition duration-300">
+                    <div key={job.id} className="border border-slate-800/80 bg-slate-950/20 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-700/60 transition duration-300 hover-animate">
                       <div>
                         <div className="flex justify-between items-start">
                           <div>
@@ -459,7 +459,7 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
                         <button 
                           onClick={() => handleApply(job.id)}
                           disabled={hasApplied}
-                          className={`px-3.5 py-1.5 rounded-xl font-bold transition text-[11px] ${
+                          className={`px-3.5 py-1.5 rounded-xl font-bold transition text-[11px] btn-animate ${
                             hasApplied 
                               ? 'bg-slate-900 border border-slate-800 text-slate-500 cursor-not-allowed' 
                               : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/15'
@@ -479,11 +479,11 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
 
             {/* Sub-tab 2: Training */}
             {careerSubTab === 'training' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger-container">
                 {filteredTrainings.map(course => {
                   const isRegistered = registeredTrainings.includes(course.id);
                   return (
-                    <div key={course.id} className="border border-slate-800/80 bg-slate-950/20 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-700/60 transition duration-300">
+                    <div key={course.id} className="border border-slate-800/80 bg-slate-950/20 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-700/60 transition duration-300 hover-animate">
                       <div>
                         <div className="flex justify-between items-start">
                           <div>
@@ -516,7 +516,7 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
                         <button
                           onClick={() => handleRegisterTraining(course)}
                           disabled={isRegistered}
-                          className={`px-3.5 py-1.5 rounded-xl font-bold transition text-[11px] flex items-center gap-1.5 cursor-pointer ${
+                          className={`px-3.5 py-1.5 rounded-xl font-bold transition text-[11px] flex items-center gap-1.5 cursor-pointer btn-animate ${
                             isRegistered
                               ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 cursor-default'
                               : 'bg-orange-600 hover:bg-orange-500 text-white shadow-lg shadow-orange-600/15'
@@ -543,11 +543,11 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
 
             {/* Sub-tab 3: Opportunities */}
             {careerSubTab === 'opportunities' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger-container">
                 {filteredInternships.map(intern => {
                   const isApplied = appliedInternships.includes(intern.id);
                   return (
-                    <div key={intern.id} className="border border-slate-800/80 bg-slate-950/20 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-700/60 transition duration-300">
+                    <div key={intern.id} className="border border-slate-800/80 bg-slate-950/20 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-700/60 transition duration-300 hover-animate">
                       <div>
                         <div className="flex justify-between items-start">
                           <div>
@@ -580,7 +580,7 @@ export default function UserDashboard({ activeTab, setActiveTab }) {
                         <button
                           onClick={() => handleApplyInternship(intern)}
                           disabled={isApplied}
-                          className={`px-3.5 py-1.5 rounded-xl font-bold transition text-[11px] flex items-center gap-1.5 cursor-pointer ${
+                          className={`px-3.5 py-1.5 rounded-xl font-bold transition text-[11px] flex items-center gap-1.5 cursor-pointer btn-animate ${
                             isApplied
                               ? 'bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 cursor-default'
                               : 'bg-orange-600 hover:bg-orange-500 text-white shadow-lg shadow-orange-600/15'

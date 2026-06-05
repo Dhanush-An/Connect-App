@@ -120,7 +120,7 @@ function MegaDropdown({ menuData, accent, title, onClose, onViewAll, pushNotific
 
   return (
     <div
-      className="absolute left-0 right-0 top-full z-50 animate-fade-in"
+      className="absolute left-0 right-0 top-full z-50 animate-slide-up"
       style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.45))' }}
     >
       <div

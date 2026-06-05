@@ -442,3 +442,82 @@ html.light tr:hover { background-color:rgba(37,99,235,0.04) !important; }
   box-shadow: 0 0 25px rgba(37, 99, 235, 0.65) !important;
   transform: scale(0.98) !important;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   CUSTOM ANIMATION & MICRO-INTERACTION STYLES
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Breathing Background Mesh ── */
+@keyframes bgGlowMovement {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 50%, 50% 50%;
+  }
+  50% {
+    background-position: 15% -8%, 90% 12%, 40% 90%, 80% 45%;
+  }
+  100% {
+    background-position: -8% 12%, 95% -8%, 45% 85%, 75% 55%;
+  }
+}
+
+.bg-gradient-mesh {
+  background-size: 200% 200% !important;
+  animation: bgGlowMovement 25s infinite alternate ease-in-out !important;
+}
+
+/* ── Staggered Entrance Animations ── */
+@keyframes slideUpStagger {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-container > * {
+  opacity: 0;
+  animation: slideUpStagger 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.stagger-container > *:nth-child(1) { animation-delay: 0.04s; }
+.stagger-container > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger-container > *:nth-child(3) { animation-delay: 0.12s; }
+.stagger-container > *:nth-child(4) { animation-delay: 0.16s; }
+.stagger-container > *:nth-child(5) { animation-delay: 0.20s; }
+.stagger-container > *:nth-child(6) { animation-delay: 0.24s; }
+.stagger-container > *:nth-child(7) { animation-delay: 0.28s; }
+.stagger-container > *:nth-child(8) { animation-delay: 0.32s; }
+
+/* ── Universal Hover lift and Glow outlines ── */
+.hover-animate {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease, 
+              background 0.4s ease !important;
+}
+.hover-animate:hover {
+  transform: translateY(-4px) scale(1.012) !important;
+  box-shadow: 0 16px 36px -10px rgba(37, 99, 235, 0.28) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+}
+.hover-animate:active {
+  transform: translateY(-1px) scale(0.995) !important;
+  transition: all 0.1s ease !important;
+}
+
+/* ── Squishy Button micro-animations ── */
+.btn-animate {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease !important;
+}
+.btn-animate:hover {
+  transform: scale(1.03) translateY(-1px) !important;
+}
+.btn-animate:active {
+  transform: scale(0.96) translateY(0) !important;
+  transition: all 0.08s ease !important;
+}
+

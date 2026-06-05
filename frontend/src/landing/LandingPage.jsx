@@ -188,10 +188,10 @@ export default function LandingPage() {
 
           {/* CTA buttons */}
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <button onClick={() => setRole('user')} className="btn-primary px-6 py-3 text-sm">
+            <button onClick={() => setRole('user')} className="btn-primary btn-animate px-6 py-3 text-sm">
               Get Started Free <ArrowRight size={14} />
             </button>
-            <button onClick={() => setRole('login')} className="btn-ghost px-6 py-3 text-sm">
+            <button onClick={() => setRole('login')} className="btn-ghost btn-animate px-6 py-3 text-sm">
               Sign In
             </button>
           </div>
@@ -249,9 +249,9 @@ export default function LandingPage() {
 
       {/* ── STATS BAR ───────────────────────────────────────────── */}
       <section className="px-6 py-12 max-w-6xl mx-auto w-full">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 stagger-container">
           {STATS.map(({ value, label, icon: Icon, color }) => (
-            <div key={label} className="stat-card">
+            <div key={label} className="stat-card hover-animate">
               <div>
                 <p className="text-2xl font-extrabold" style={{ color, fontFamily:'var(--font-display)' }}>{value}</p>
                 <p className="text-[11px] mt-1 font-medium" style={{ color:'var(--text-faint)' }}>{label}</p>
@@ -293,13 +293,13 @@ export default function LandingPage() {
           </div>
 
           {/* Grid checkmark items */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full md:w-auto shrink-0 z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full md:w-auto shrink-0 z-10 stagger-container">
             {[
               'Food & Dining', 'Travel Offers', 'Hotels & Stay', 
               'Shopping Deals', 'Healthcare', 'Premium Services', 
               'Job Opportunities', 'Education Portal', 'Business Options'
             ].map(item => (
-              <div key={item} className="flex items-center gap-2 p-3 rounded-xl border text-xs font-bold"
+              <div key={item} className="flex items-center gap-2 p-3 rounded-xl border text-xs font-bold hover-animate"
                 style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)', color: 'var(--text-base)' }}>
                 <CheckCircle size={14} className="text-amber-500 shrink-0" />
                 <span>{item}</span>
@@ -323,11 +323,11 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-container">
           {MEMBERSHIPS.map((plan) => (
             <div
               key={plan.name}
-              className={`surface-card p-6 flex flex-col justify-between transition-all duration-300 relative ${
+              className={`surface-card hover-animate p-6 flex flex-col justify-between transition-all duration-300 relative ${
                 plan.highlight ? 'border-[var(--accent-primary)] ring-1 ring-[var(--accent-primary)] scale-[1.03]' : ''
               }`}
               onMouseEnter={e => {
@@ -440,7 +440,7 @@ export default function LandingPage() {
                   setPendingMembership({ name: plan.name, price: plan.price });
                   setRole('login');
                 }}
-                className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer mt-4 ${
+                className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer mt-4 btn-animate ${
                   plan.highlight 
                     ? 'btn-primary justify-center' 
                     : 'btn-ghost justify-center text-[var(--text-base)] border-[var(--border-mid)] hover:bg-[var(--glass-hover-bg)]'
@@ -467,7 +467,7 @@ export default function LandingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left panel: Info cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger-container">
             {[
               { title: 'Food Vouchers', desc: 'Redeem points for dining and restaurant discounts.' },
               { title: 'Travel Discounts', desc: 'Apply points for bus, flight, and cab booking savings.' },
@@ -476,7 +476,7 @@ export default function LandingPage() {
               { title: 'Service Bookings', desc: 'Cover consulting audits, developers, and agency audits.' },
               { title: 'Renewal Discounts', desc: 'Save on your Silver, Gold, or Diamond annual subscription fee.' }
             ].map((rew, idx) => (
-              <div key={rew.title} className="surface-card p-5 border flex flex-col gap-2 transition-all hover:scale-[1.01]"
+              <div key={rew.title} className="surface-card p-5 border flex flex-col gap-2 transition-all hover-animate"
                 style={{ borderColor: 'var(--border-subtle)' }}>
                 <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/25 flex items-center justify-center">
                   <span className="text-yellow-500 text-xs font-bold font-mono">0{idx+1}</span>
@@ -488,7 +488,7 @@ export default function LandingPage() {
           </div>
 
           {/* Right panel: Visualization */}
-          <div className="surface-card p-8 border rounded-2xl flex flex-col justify-between h-full relative overflow-hidden shadow-xl"
+          <div className="surface-card p-8 border rounded-2xl flex flex-col justify-between h-full relative overflow-hidden shadow-xl hover-animate"
             style={{
               background: 'linear-gradient(135deg, rgba(245,168,0,0.08) 0%, rgba(27,42,138,0.08) 100%)',
               borderColor: 'var(--border-mid)'
@@ -557,9 +557,9 @@ export default function LandingPage() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger-container">
           {services.slice(0, 4).map(srv => (
-            <div key={srv.id} className="surface-card p-5 flex flex-col gap-4">
+            <div key={srv.id} className="surface-card p-5 flex flex-col gap-4 hover-animate">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <h3 className="text-sm font-semibold" style={{ color:'var(--text-base)' }}>{srv.title}</h3>
@@ -572,7 +572,7 @@ export default function LandingPage() {
                 <span className="text-[11px]" style={{ color:'var(--text-faint)' }}>by {srv.vendorName}</span>
                 <button
                   onClick={() => { setRole('user'); pushNotification(`Selected: "${srv.title}". Choose a date to book.`); }}
-                  className="btn-primary text-xs py-2 px-4"
+                  className="btn-primary btn-animate text-xs py-2 px-4"
                 >
                   Book Now
                 </button>
@@ -596,9 +596,9 @@ export default function LandingPage() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 stagger-container">
           {products.map(prod => (
-            <div key={prod.id} className="surface-card p-5 flex flex-col gap-3">
+            <div key={prod.id} className="surface-card p-5 flex flex-col gap-3 hover-animate">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-sm font-semibold" style={{ color:'var(--text-base)' }}>{prod.title}</h3>
                 <span className="font-bold shrink-0" style={{ color:'#c084fc' }}>${prod.price}</span>
@@ -609,7 +609,7 @@ export default function LandingPage() {
                 <span className="text-[11px]" style={{ color:'var(--text-faint)' }}>{prod.sales || 0} sales</span>
                 <button
                   onClick={() => { setRole('user'); pushNotification('Redirected to marketplace.'); }}
-                  className="btn-ghost text-xs"
+                  className="btn-ghost btn-animate text-xs"
                   style={{ color:'#c084fc', borderColor:'rgba(192,132,252,0.3)' }}
                 >
                   Buy Toolkit
@@ -632,9 +632,9 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 stagger-container">
           {reviews && reviews.filter(r => r.rating >= 4).map(rev => (
-            <div key={rev.id} className="surface-card p-6 flex flex-col gap-4">
+            <div key={rev.id} className="surface-card p-6 flex flex-col gap-4 hover-animate">
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-bold text-sm" style={{ color:'var(--text-base)' }}>{rev.reviewerName}</h4>
@@ -666,7 +666,7 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-container">
           {[
             { title: 'Membership Fees', desc: 'Sustained pricing plans from individuals and enterprise card users.' },
             { title: 'Partner Commissions', desc: 'Direct transactional cuts on bookings and digital toolkit purchases.' },
@@ -679,7 +679,7 @@ export default function LandingPage() {
           ].map((src, idx) => (
             <div
               key={src.title}
-              className="surface-card p-5 border flex flex-col justify-between transition-all hover:scale-[1.01]"
+              className="surface-card p-5 border flex flex-col justify-between transition-all hover-animate"
               style={{ borderColor: 'var(--border-subtle)', background: 'var(--bg-elevated)' }}
             >
               <div className="space-y-2">
@@ -849,7 +849,7 @@ export default function LandingPage() {
                   setRole('login');
                   setSelectedPlanForModal(null);
                 }}
-                className="btn-primary py-3 px-6 rounded-xl text-xs font-bold transition-all cursor-pointer"
+                className="btn-primary btn-animate py-3 px-6 rounded-xl text-xs font-bold transition-all cursor-pointer"
                 style={{
                   background: selectedPlanForModal.highlight ? 'var(--accent-primary)' : 'rgba(124, 58, 237, 0.15)',
                   color: selectedPlanForModal.highlight ? '#fff' : '#a78bfa',
@@ -911,7 +911,7 @@ function ContactForm({ pushNotification }) {
           <label className="section-label">Message</label>
           <textarea className="input-field resize-none" rows="4" value={form.msg} onChange={set('msg')} placeholder="How can we help?" required />
         </div>
-        <button type="submit" className="btn-primary w-full justify-center py-2.5">
+        <button type="submit" className="btn-primary btn-animate w-full justify-center py-2.5">
           Send Message
         </button>
       </form>
